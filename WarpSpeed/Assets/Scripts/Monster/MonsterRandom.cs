@@ -40,7 +40,5 @@ public class MonsterRandom : MonoBehaviour
             //Random direction with mag of 1, then multiply by velocity
             moveDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized;
             movePerSecond = moveDirection * monsterVelocity;
-
-        
     }
 }
