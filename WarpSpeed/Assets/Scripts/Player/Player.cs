@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float maxSpeed = 5;
     public float sprint = 0.01f;
     public Vector3 direction;
+    public Animator animator;
 
        
     // Start is called before the first frame update
