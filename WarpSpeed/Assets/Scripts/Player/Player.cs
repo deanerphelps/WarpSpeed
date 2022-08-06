@@ -9,13 +9,14 @@ public class Player : MonoBehaviour
     public float maxSpeed = 5;
     public float sprint = 0.01f;
     public Vector3 direction;
-    public Animator animator;
+    private Animator myAnim;
 
        
     // Start is called before the first frame update
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();        
+        body = GetComponent<Rigidbody2D>();
+        myAnim = GetComponent<Animator>();        
         speed = 0.5f;
     }
 
@@ -32,6 +33,9 @@ public class Player : MonoBehaviour
 
         transform.position = Vector2.MoveTowards(transform.position, transform.position
         + direction, speed * Time.deltaTime);
+
+        myAnim.SetFloat("moveX", transform.position.x);
+        myAnim.SetFloat("moveY", transform.position.y);
 
         if(direction.x != 0 || direction.y != 0)
         {
