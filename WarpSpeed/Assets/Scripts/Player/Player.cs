@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float maxSprint = 7;
     public float value;
     public float timeToMax = 1;
+    public Animator animator;
 
        
     // Start is called before the first frame update
