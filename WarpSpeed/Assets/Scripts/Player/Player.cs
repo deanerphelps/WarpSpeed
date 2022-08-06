@@ -7,17 +7,15 @@ public class Player : MonoBehaviour
     Rigidbody2D body;
     public float speed = 1f;
     public float maxSpeed = 5;
-    public float sprintSpeed = 5;
-    public float maxSprint = 7;
-    public float value;
-    public float timeToMax = 1;
+    public float sprint = 0.01f;
+    public Vector3 direction;
 
        
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();        
-        speed = 2;
+        speed = 0.5f;
     }
 
     // Update is called once per frame
@@ -26,55 +24,35 @@ public class Player : MonoBehaviour
         Movement();
     }
 
-    void Movement3()
-    {
-        
-    }
-
-
-    void Movement2()
-    {
-        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"),
-        Input.GetAxisRaw("Vertical"), 0);
-
-        transform.position = Vector2.MoveTowards(transform.position, transform.position
-        + direction, speed * Time.deltaTime);
-
-        float moveTowards = 0;
-        float changeRatePerSecond = 1 / timeToMax * Time.deltaTime;
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-        {
-            moveTowards = 1.0f;
-        }
-        else
-        {
-            moveTowards = 0f;
-        }
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            changeRatePerSecond *=2;
-        }
-        value = Mathf.MoveTowards (value, moveTowards, changeRatePerSecond);
-        speed = speed + value;
-        speed = 2;
-    }
-
     void Movement()
     {
-        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"),
+        direction = new Vector3(Input.GetAxisRaw("Horizontal"),
         Input.GetAxisRaw("Vertical"), 0);
 
         transform.position = Vector2.MoveTowards(transform.position, transform.position
         + direction, speed * Time.deltaTime);
 
-        if (Input.GetKey("left shift"))
+        if(direction.x != 0 || direction.y != 0)
         {
-            speed = 7;
+            speed = speed + sprint;
+            if(speed >= maxSpeed)
+            {
+                speed = maxSpeed;
+            }
         }
         else
         {
-            speed = 5;
+            speed = 0.5f;
+        }
+        if (Input.GetKey("left shift"))
+        {
+            sprint = 0.02f;
+            maxSpeed = 7;
+        }
+        else
+        {
+            sprint = 0.01f;
+            maxSpeed = 5;
         }
     }
-
 }
