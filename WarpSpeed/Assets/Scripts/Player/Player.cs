@@ -6,8 +6,8 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D body;
     public float speed = 1f;
-    public float maxSpeed = 5;
-    public float sprint = 0.01f;
+    public float maxSpeed = 3;
+    public float sprint = 0.001f;
     public Vector3 direction;
     private Animator myAnim;
 
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();        
-        speed = 0.5f;
+        speed = 0.3f;
     }
 
     // Update is called once per frame
@@ -34,8 +34,8 @@ public class Player : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, transform.position
         + direction, speed * Time.deltaTime);
 
-        myAnim.SetFloat("moveX", transform.position.x);
-        myAnim.SetFloat("moveY", transform.position.y);
+        myAnim.SetFloat("moveX", direction.x);
+        myAnim.SetFloat("moveY", direction.y);
 
         if(direction.x != 0 || direction.y != 0)
         {
@@ -47,17 +47,17 @@ public class Player : MonoBehaviour
         }
         else
         {
-            speed = 0.5f;
+            speed = 0.3f;
         }
         if (Input.GetKey("left shift"))
         {
-            sprint = 0.02f;
-            maxSpeed = 7;
+            sprint = 0.01f;
+            maxSpeed = 4.5f;
         }
         else
         {
-            sprint = 0.01f;
-            maxSpeed = 5;
+            sprint = 0.001f;
+            maxSpeed = 3;
         }
     }
 }
