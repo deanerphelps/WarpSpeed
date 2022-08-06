@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float sprint = 0.001f;
     public Vector3 direction;
     private Animator myAnim;
+    public int health = 2;
 
        
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement();
+        CheckHealth();
     }
 
     void Movement()
@@ -58,6 +60,15 @@ public class Player : MonoBehaviour
         {
             sprint = 0.001f;
             maxSpeed = 3;
+        }
+    }
+
+    void CheckHealth()
+    {
+        bool alive = true;
+        if(health <= 0)
+        {
+            alive = false;
         }
     }
 }
