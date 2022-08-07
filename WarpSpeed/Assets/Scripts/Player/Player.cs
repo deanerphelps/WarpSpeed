@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     public Vector3 direction;
     private Animator myAnim;
     public int health = 2;
+    public bool alive = true;
+
+    public float cooldown;
+    public float lastDown;
 
        
     // Start is called before the first frame update
@@ -71,10 +75,22 @@ public class Player : MonoBehaviour
 
     void CheckHealth()
     {
-        bool alive = true;
+        
         if(health <= 0)
         {
             alive = false;
+            Debug.Log("Player Died");
+            Debug.Break();
+            Application.Quit();
         }
+    }
+
+    public void UpdateHealth()
+    {
+        if(Time.time-lastDown < cooldown){
+            return;
+        }
+        lastDown = Time.time;
+        health--;
     }
 }

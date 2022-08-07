@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterTarget : MonoBehaviour
+public class MonsterAttack : MonoBehaviour
 {
     private GameObject player;
     public float Cooldown = 5f;
@@ -13,6 +13,7 @@ public class MonsterTarget : MonoBehaviour
     {
         lastCooldown = 0f;
         player = GameObject.FindGameObjectWithTag("Player");    
+        Debug.Log(player.tag);
     }
 
     // Update is called once per frame
@@ -22,4 +23,16 @@ public class MonsterTarget : MonoBehaviour
         if(Time.time - lastCooldown > Cooldown)
         {
             lastCooldown = Time.time;
-            Attack();
+            //Attack();
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<Player>().UpdateHealth();
+            other.gameObject.GetComponent<MonsterTarget>().speed = 0;
+        }
+    }
+}
