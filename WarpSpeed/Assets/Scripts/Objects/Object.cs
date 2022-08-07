@@ -21,6 +21,7 @@ public class Object : MonoBehaviour
     {
         myAnim.SetBool("PlayerNear", false);
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+        
         if(distanceFromPlayer < lineOfSight)
         {
             // once in range of player, play new animation
