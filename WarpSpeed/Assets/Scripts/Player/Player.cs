@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -83,8 +84,8 @@ public class Player : MonoBehaviour
         {
             alive = false;
             Debug.Log("Player Died");
-            Debug.Break();
-            Application.Quit();
+            // Debug.Break();
+            SceneManager.LoadScene("Death");
         }
     }
 
