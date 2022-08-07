@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
 
     public float cooldown = 0.5f;
     public float lastDown;
-
        
     // Start is called before the first frame update
     void Start()
@@ -31,6 +30,7 @@ public class Player : MonoBehaviour
     {
         Movement();
         CheckHealth();
+        CollectedItems();
     }
 
     void Movement()
@@ -96,5 +96,20 @@ public class Player : MonoBehaviour
         }
         lastDown = Time.time;
         health--;
+    }
+
+    public bool Crate = false;
+    public bool Hammer = false;
+    public bool Hazard = false;
+    public bool Wires = false;
+    public bool Wrench = false;
+
+    void CollectedItems()
+    {
+        if(Crate && Hammer && Hazard && Wires && Wrench == true)
+        {
+            //Debug.Log("You win!");
+            //Start a WIN Screen
+        }
     }
 }

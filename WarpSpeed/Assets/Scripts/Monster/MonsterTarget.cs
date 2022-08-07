@@ -39,6 +39,7 @@ public class MonsterTarget : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<Player>().UpdateHealth();
+            //other.gameObject.GetComponent<Player>().Hammer = true;
             //Debug.Log("Hit");
         }
     }
