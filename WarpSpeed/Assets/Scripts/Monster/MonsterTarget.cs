@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class MonsterTarget : MonoBehaviour
 {
+    [SerializeField]
     public float speed;
+    [SerializeField]
     public float lineOfSight;
     private Transform player;
+    private Animator myAnim;
 
     // Start is called before the first frame update
     void Start()
     {
+        myAnim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;    
     }
 
     // Update is called once per frame
     void Update()
     {
+        myAnim.SetBool("isMoving", true);
+        myAnim.SetFloat("moveX", (player.position.x - transform.position.x));
+        myAnim.SetFloat("moveY", (player.position.y - transform.position.y));
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
         if(distanceFromPlayer < lineOfSight)
         {
