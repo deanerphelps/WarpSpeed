@@ -14,6 +14,8 @@ public class MonsterTarget : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = 1.7f;
+        lineOfSight = 3.15f;
         myAnim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;    
     }

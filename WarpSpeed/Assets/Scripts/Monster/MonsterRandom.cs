@@ -6,8 +6,8 @@ using UnityEngine;
 public class MonsterRandom : MonoBehaviour
 {
     private float lastDirectionChangeTime;
-    private float directionChangeTime = 3f;
-    public float monsterVelocity = 0.35f;
+    private float directionChangeTime = 4f;
+    public float monsterVelocity = 0.55f;
     private Vector2 moveDirection; 
     private Vector2 movePerSecond;
 

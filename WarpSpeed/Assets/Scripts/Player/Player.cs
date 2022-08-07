@@ -6,14 +6,14 @@ public class Player : MonoBehaviour
 {
     Rigidbody2D body;
     public float speed = 1f;
-    public float maxSpeed = 3;
+    public float maxSpeed = 2.3f;
     public float sprint = 0.001f;
     public Vector3 direction;
     private Animator myAnim;
     public int health = 2;
     public bool alive = true;
 
-    public float cooldown;
+    public float cooldown = 0.5f;
     public float lastDown;
 
        
@@ -64,12 +64,10 @@ public class Player : MonoBehaviour
         if (Input.GetKey("left shift"))
         {
             sprint = 0.01f;
-            maxSpeed = 4.5f;
         }
         else
         {
             sprint = 0.001f;
-            maxSpeed = 3;
         }
     }
 
