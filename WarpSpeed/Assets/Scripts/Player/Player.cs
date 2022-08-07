@@ -47,6 +47,11 @@ public class Player : MonoBehaviour
         {
             myAnim.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
             myAnim.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            GetComponent<AudioSource>().UnPause();
+        }
+        else
+        {
+            GetComponent<AudioSource>().Pause();
         }
 
         if(direction.x != 0 || direction.y != 0)
