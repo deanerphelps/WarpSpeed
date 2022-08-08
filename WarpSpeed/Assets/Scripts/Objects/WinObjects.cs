@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class WinObjects : MonoBehaviour
 {
+    public Animator animator;
+    
     public bool Crate = false;
     public bool Hammer = false;
     public bool Hazard = false;
     public bool Wires = false;
-    public bool Wrench = false;
+    public bool Wrench = false; 
 
     private Transform player;
     [SerializeField]
@@ -17,6 +19,7 @@ public class WinObjects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         player = GameObject.FindGameObjectWithTag("Player").transform;   
     }
 
@@ -29,22 +32,27 @@ public class WinObjects : MonoBehaviour
             if(Crate == true)
             {
                 //Animate crate
+                animator.SetBool("Near", true);
             }
             else if(Hammer == true)
             {
                 //Animate Hammer
+                animator.SetBool("Near", true);
             }
             else if(Hazard == true)
             {
                 //Animate Hazard
+                animator.SetBool("Near", true);
             }
             else if(Wires == true)
             {
                 //Animate Wires
+                animator.SetBool("Near", true);
             }
             else if(Wrench == true)
             {
                 //Animate Wrench
+                animator.SetBool("Near", true);
             }
         }
     }
