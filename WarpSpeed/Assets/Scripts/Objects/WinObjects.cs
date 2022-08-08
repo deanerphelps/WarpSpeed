@@ -64,22 +64,27 @@ public class WinObjects : MonoBehaviour
             if(Crate == true)
             {
                 other.gameObject.GetComponent<Player>().Crate = true;
+                Destroy(this.gameObject);
             }
             else if(Hammer == true)
             {
                 other.gameObject.GetComponent<Player>().Hammer = true;
+                Destroy(this.gameObject);
             }
             else if(Hazard == true)
             {
                 other.gameObject.GetComponent<Player>().Hazard = true;
+                Destroy(this.gameObject);
             }
             else if(Wires == true)
             {
                 other.gameObject.GetComponent<Player>().Wires = true;
+                Destroy(this.gameObject);
             }
             else if(Wrench == true)
             {
                 other.gameObject.GetComponent<Player>().Wrench = true;
+                Destroy(this.gameObject);
             }
         }
     }
