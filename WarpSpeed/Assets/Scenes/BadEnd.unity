@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 536202819}
   - component: {fileID: 536202818}
   - component: {fileID: 536202817}
+  - component: {fileID: 536202820}
   m_Layer: 5
   m_Name: Quit Game
   m_TagString: Untagged
@@ -293,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: -100}
+  m_AnchoredPosition: {x: -385, y: -100}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536202817
@@ -340,10 +341,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 5d752754e44cfd345b4f410213a29c6d, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: set_name
-        m_Mode: 5
+      - m_Target: {fileID: 536202820}
+        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
+        m_MethodName: doExitGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -390,6 +391,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536202815}
   m_CullTransparentMesh: 1
+--- !u!114 &536202820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536202815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d752754e44cfd345b4f410213a29c6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &743936137
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,7 +638,6 @@ GameObject:
   - component: {fileID: 1471552531}
   - component: {fileID: 1471552533}
   - component: {fileID: 1471552532}
-  - component: {fileID: 1471552534}
   m_Layer: 5
   m_Name: DeathText
   m_TagString: Untagged
@@ -749,19 +761,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471552530}
   m_CullTransparentMesh: 1
---- !u!114 &1471552534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471552530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6df9688358558b24790c8a861d5d5c6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeathText: {fileID: 1471552530}
 --- !u!1 &1505656641
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: -100}
+  m_AnchoredPosition: {x: 385, y: -100}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1505656643
@@ -1055,7 +1054,6 @@ GameObject:
   - component: {fileID: 1900606753}
   - component: {fileID: 1900606752}
   - component: {fileID: 1900606751}
-  - component: {fileID: 1900606755}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1147,16 +1145,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1900606755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900606750}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6df9688358558b24790c8a861d5d5c6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DeathText: {fileID: 0}
