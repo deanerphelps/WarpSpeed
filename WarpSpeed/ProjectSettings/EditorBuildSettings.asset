@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Death.unity
+    path: Assets/Scenes/BadEnd.unity
     guid: 201d36819e9f0ce438c23ed20cd0bea0
+  - enabled: 1
+    path: Assets/Scenes/GoodEnd.unity
+    guid: a337cc88239950744930211041206d14
   m_configObjects: {}
